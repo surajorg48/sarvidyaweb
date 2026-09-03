@@ -61,7 +61,7 @@ img { max-width: 100%; }
   letter-spacing: 1px;
 }
 .main-navbar {
-  background: #fff !important;
+  background: #fff;
   box-shadow: 0 2px 20px rgba(27,42,74,0.1);
   padding: 0 !important;
   position: sticky;
@@ -69,7 +69,12 @@ img { max-width: 100%; }
   z-index: 1050;
   transition: var(--transition);
 }
-.main-navbar.scrolled { box-shadow: 0 4px 30px rgba(27,42,74,0.18); }
+.main-navbar.scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(27,42,74,0.18);
+}
 .main-navbar .nav-link {
   font-size: 0.88rem;
   font-weight: 600;
