@@ -19,8 +19,9 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Poppins', sans-serif; color: var(--text-dark); overflow-x: hidden; }
+html, body { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
+body { font-family: 'Poppins', sans-serif; color: var(--text-dark); }
+.container-xl, .container, .container-fluid { max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; }
@@ -45,25 +46,28 @@ img { max-width: 100%; }
 }
 
 /* ===== NAVBAR ===== */
-.navbar-brand img { height: 58px; }
+.navbar-brand img { height: 52px; }
+.navbar-brand { max-width: 260px; margin-right: 24px !important; }
 .navbar-brand .brand-text { line-height: 1.1; }
 .navbar-brand .brand-name {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: var(--primary);
   letter-spacing: 0.5px;
 }
 .navbar-brand .brand-tagline {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: var(--text-muted);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
 }
 .main-navbar {
   background: #fff;
   box-shadow: 0 2px 20px rgba(27,42,74,0.1);
   padding: 0 !important;
+  overflow-x: hidden;
   position: sticky;
   top: 0;
   z-index: 1050;
@@ -431,6 +435,7 @@ img { max-width: 100%; }
   border-radius: 30px;
   font-weight: 600;
   font-size: 0.88rem;
+  white-space: nowrap;
   transition: var(--transition);
   box-shadow: 0 4px 16px rgba(245,130,32,0.35);
 }
@@ -669,6 +674,9 @@ img { max-width: 100%; }
   .hero-stats { position: static; margin-top: 0; }
   .hero-slide { min-height: 60vh; }
   .accred-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .navbar-brand { max-width: 200px; }
+  .navbar-brand img { height: 46px; }
+  .navbar-brand .brand-name { font-size: 1rem; }
 }
 @media (max-width: 767px) {
   .top-bar { display: none; }
@@ -679,4 +687,7 @@ img { max-width: 100%; }
   .counter-item .counter-num { font-size: 2.2rem; }
   .event-card { flex-direction: column; }
   .event-date-box { flex-direction: row; gap: 8px; padding: 12px 16px; }
+  .page-hero { padding: 60px 0 40px; }
+  section { overflow-x: hidden; }
+  .row { --bs-gutter-x: 1rem; }
 }
