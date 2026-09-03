@@ -58,6 +58,31 @@ document.querySelectorAll('.nav-link').forEach(link => {
   if (href === currentPage) link.classList.add('active');
 });
 
+// Desktop navbar dropdown hover & clean close (prevents menus staying stuck on click)
+function initDesktopDropdowns() {
+  if (window.innerWidth >= 992) {
+    document.querySelectorAll('.main-navbar .dropdown').forEach(dropdown => {
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      const menu = dropdown.querySelector('.dropdown-menu');
+      
+      dropdown.addEventListener('mouseenter', () => {
+        if (window.innerWidth >= 992 && menu) {
+          menu.classList.add('show');
+          if (toggle) toggle.classList.add('show');
+        }
+      });
+      
+      dropdown.addEventListener('mouseleave', () => {
+        if (window.innerWidth >= 992 && menu) {
+          menu.classList.remove('show');
+          if (toggle) toggle.classList.remove('show');
+        }
+      });
+    });
+  }
+}
+initDesktopDropdowns();
+
 // Lightbox for gallery (simple)
 document.querySelectorAll('.gallery-item img').forEach(img => {
   img.style.cursor = 'pointer';

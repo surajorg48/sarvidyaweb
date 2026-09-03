@@ -103,7 +103,6 @@ img {
   background: #fff;
   box-shadow: 0 2px 20px rgba(27, 42, 74, 0.1);
   padding: 0 !important;
-  overflow-x: hidden;
   position: sticky;
   top: 0;
   z-index: 1050;
@@ -149,6 +148,15 @@ img {
   color: var(--orange) !important;
 }
 
+@media (min-width: 992px) {
+  .main-navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .main-navbar .dropdown-menu {
   border: none;
   box-shadow: var(--shadow-hover);
@@ -156,6 +164,7 @@ img {
   border-top: 3px solid var(--orange);
   animation: dropFade 0.2s ease;
   min-width: 210px;
+  z-index: 1060;
 }
 
 @keyframes dropFade {
